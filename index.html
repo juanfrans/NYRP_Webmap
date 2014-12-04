@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Brooklyn - Queens Tram</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script src="geoJson_Files/Selected_Developments.geojson" type="text/javascript"></script>
+		<script src="geoJson_Files/Tram_Line.geojson" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id='map'></div>
+		<script language="javascript">
+
+		var southWest = L.latLng(40.604313, -74.221959),
+  			northEast = L.latLng(40.829315, -73.734233),
+  			bounds = L.latLngBounds(southWest, northEast),
+  			center = L.latLng(40.712398, -73.967900);
+
+  		var map = L.map('map', {
+			maxBounds: bounds,
+			center: center
+		}).setView([40.711652, -73.966539], 12);
+
+		L.tileLayer('http://{s}.tiles.mapbox.com/v3/jfs2118.k0il297k/{z}/{x}/{y}.png', {
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			maxZoom: 18,
+			minZoom: 12
+		}).addTo(map);
+
+		var tramStyle = {
+			"color": "#ff7800",
+			"weight": 5,
+			"opacity": 0.65
+		};
+
+		var devProjectsStyle = {
+			"color": "#FF0000",
+			"fillColor": "#000000",
+			"fillOpacity": 0.1,
+			"strokeOpacity": 1,
+			"weight": 2.5
+		};
+
+		var selBuildingsStyle = {
+			"color": "#333333",
+			"weight": 0
+		}
+
+		L.geoJson(tramLines, {
+			style: tramStyle
+		}).addTo(map);
+
+		L.geoJson(devProjects, {
+			style: devProjectsStyle,
+			onEachFeature: function (feature, layer){
+				layer.bindPopup("<b>"+feature.properties.Developer+"</b>"+ "<br />" + feature.properties.Name + "<br />" + feature.properties.Size + "<br />" + feature.properties.Date);
+			}
+		}).addTo(map);
+
+		</script>
+	</body>
+</htlm>
