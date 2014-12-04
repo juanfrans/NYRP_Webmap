@@ -5,14 +5,21 @@ center = L.latLng(40.712398, -73.967900);
 
 var map = L.map('map', {
 	maxBounds: bounds,
-	center: center,
-	maxZoom: 18,
-	minZoom: 12
+	center: center
 }).setView([40.711652, -73.966539], 12);
 
 var layer = new L.StamenTileLayer("toner");
-
+var map = new L.Map("element_id", {
+    center: new L.LatLng(37.7, -122.4),
+    zoom: 12
+});
 map.addLayer(layer);
+
+L.tileLayer('http://{s}.tiles.mapbox.com/v3/jfs2118.k0il297k/{z}/{x}/{y}.png', {
+	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	maxZoom: 18,
+	minZoom: 12
+}).addTo(map);
 
 var devProjects = [{
 	"type": "FeatureCollection",
