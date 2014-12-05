@@ -1,12 +1,12 @@
-var southWest = L.latLng(40.604313, -74.221959),
-northEast = L.latLng(40.829315, -73.734233),
+var southWest = L.latLng(40.727214, -74.178321),
+northEast = L.latLng(40.887550, -73.696983),
 bounds = L.latLngBounds(southWest, northEast),
 center = L.latLng(40.712398, -73.967900);
 
 var map = L.map('map', {
 	maxBounds: bounds,
 	center: center
-}).setView([40.711652, -73.966539], 12);
+}).setView([40.809129, -73.922882], 12);
 
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/jfs2118.kda701ka/{z}/{x}/{y}.png', {
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
