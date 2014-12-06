@@ -1,7 +1,7 @@
 var southWest = L.latLng(40.727214, -74.178321),
-northEast = L.latLng(40.887550, -73.696983),
-bounds = L.latLngBounds(southWest, northEast),
-center = L.latLng(40.807525, -73.917018);
+	northEast = L.latLng(40.887550, -73.696983),
+	bounds = L.latLngBounds(southWest, northEast),
+	center = L.latLng(40.807525, -73.917018);
 
 var map = L.map('map', {
 	maxBounds: bounds,
@@ -9,7 +9,7 @@ var map = L.map('map', {
 }).setView([40.807525, -73.917018], 15);
 
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/jfs2118.kda701ka/{z}/{x}/{y}.png', {
-	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> &copy <a href="http://mapbox.com">Mapbox</a> &copy <a href="http://spatialinformationdesignlab.org">Spatial Information Design Lab</a>',
 	maxZoom: 18,
 	minZoom: 14
 }).addTo(map);
@@ -129,38 +129,313 @@ var nycha = [{
 }
 ]
 
+var comments = [{
+	"type": "FeatureCollection",
+	"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+
+	"features": [
+	{ "type": "Feature", "properties": { "NOTES": "UNDERUSED, ZONING HAS CHANGED", "POINT_X": 1003390.786410, "POINT_Y": 234885.746135, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.930854162630439, 40.811362134423582 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LINCOLN BAD TRAFFIC", "POINT_X": 1004032.706670, "POINT_Y": 232176.043742, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.928543220328578, 40.803923338729199 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "IMPROVE", "POINT_X": 1005553.540000, "POINT_Y": 232144.793742, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.923049945889019, 40.803834030081894 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "MAJOR DIFFICULTY = USES, TRAFFIC, INDUSTRIAL", "POINT_X": 1006980.529000, "POINT_Y": 231012.474705, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917899386228356, 40.800722570138461 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "SPEED TRAFFIC", "POINT_X": 1006184.122790, "POINT_Y": 232686.424441, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.920770463214879, 40.805319113854814 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ENVIRONMENTAL BLUE TOWER\/BUS SOUTH BRONX UNITE", "POINT_X": 1009862.567780, "POINT_Y": 231040.627075, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.907489622882181, 40.800791956598722 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "SYNTHESIZING NYCHA NOT DANGER, SYMBOLIC WALLS", "POINT_X": 1009506.665000, "POINT_Y": 231370.488186, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.908773871176265, 40.801698359085826 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ABANDONED RAIL SPACES, PEOPLE PARK ANYWHERE", "POINT_X": 1010209.790000, "POINT_Y": 233011.113186, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.906227868302452, 40.806199383504897 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "SOUTH BRONX GREENWAY", "POINT_X": 1010254.060840, "POINT_Y": 232909.840038, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.906068345289754, 40.805921286607436 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "SOUTHERN BLVD AUTO SHOPS", "POINT_X": 1010071.011340, "POINT_Y": 233974.663334, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.906725459051415, 40.808844467548553 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "DOME OF THE CAPITO BUILDING BUILT JUST NORTH", "POINT_X": 1010019.685840, "POINT_Y": 233847.340038, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.906911353375463, 40.808495150405314 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "TRANSFER EQUIPMENT USING TUNNELS, RAIL", "POINT_X": 1008899.894170, "POINT_Y": 235019.215038, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.910952105877442, 40.811714815652593 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CENTER", "POINT_X": 1008535.310840, "POINT_Y": 234889.006705, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.912269635614663, 40.81135843990122 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BASEBALL", "POINT_X": 1008856.491390, "POINT_Y": 234168.520594, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911112016991879, 40.809380017834265 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CONNECTOR", "POINT_X": 1008682.880280, "POINT_Y": 234298.728927, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911738691842501, 40.809737885256595 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "UNDERUSED TRIANGLE", "POINT_X": 1004877.197250, "POINT_Y": 235309.545250, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.925483223316789, 40.812521999157042 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ADD BIKE LANE ON 133RD BTWN", "POINT_X": 1007115.469350, "POINT_Y": 231132.080436, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917411586891674, 40.801050506857273 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CREATED BIKE LANES ON MAJOR ROADS", "POINT_X": 1002228.453200, "POINT_Y": 233900.725455, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.935055712553336, 40.808660968523597 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LINCOLN", "POINT_X": 1003433.314310, "POINT_Y": 233395.517121, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.930704789887173, 40.807271777836576 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PARK", "POINT_X": 1003120.814310, "POINT_Y": 233780.933788, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.931832538743095, 40.808330312698153 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ALEXANDER", "POINT_X": 1003881.230980, "POINT_Y": 232895.517121, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.929088259099615, 40.805898432360472 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "WATER TAX", "POINT_X": 1003860.397640, "POINT_Y": 232109.058788, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.929165810230032, 40.80373986761203 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BIKE SHOP CAFES KIOSK", "POINT_X": 1006566.497240, "POINT_Y": 230947.604753, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.919395046227791, 40.800545575323333 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PIER", "POINT_X": 1009227.627200, "POINT_Y": 229974.632620, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.90978693690559, 40.797867911808865 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "GANTRIES", "POINT_X": 1009615.108350, "POINT_Y": 230371.215864, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.908385952983011, 40.79895532041764 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "GREEN ROOFS GARDENS AMAZING VIEWS", "POINT_X": 1009747.052800, "POINT_Y": 230961.493642, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.907907153186557, 40.800575091160624 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "GREENWAY?", "POINT_X": 1009828.686040, "POINT_Y": 232611.154250, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.907606017491801, 40.805102718578588 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PROPOSE TOLLS OFF OF HIGHWAYS", "POINT_X": 1007876.238820, "POINT_Y": 232031.747272, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.914660578784975, 40.803517843136952 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "COMBINE WAY FINDING AND SAFETY", "POINT_X": 1010997.052800, "POINT_Y": 232343.438086, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.903386774519475, 40.804364452112502 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PLANTING TREES ALL ALONG", "POINT_X": 1006493.318030, "POINT_Y": 232693.261697, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.919653578818625, 40.805337107235225 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BIKE FATALITY", "POINT_X": 1006941.497240, "POINT_Y": 232954.549197, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.918033801656833, 40.806053129438986 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "FLAT FIX", "POINT_X": 1006366.103720, "POINT_Y": 231943.017135, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.920115568391111, 40.803278212389927 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "SCHOOL", "POINT_X": 1004780.766000, "POINT_Y": 233674.308000, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.925836587265792, 40.808033953046809 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "GREENWAY", "POINT_X": 1005597.156030, "POINT_Y": 234065.555528, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.922886293860557, 40.809105883948376 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "FARMERS MARKET", "POINT_X": 1004990.108350, "POINT_Y": 234378.160308, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.925078204336685, 40.809965343004308 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "MOTT HAVEN GRILL", "POINT_X": 1003033.748510, "POINT_Y": 234677.985418, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.932144538194962, 40.810792655505182 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ANTIQUE BISTRO", "POINT_X": 1004170.301350, "POINT_Y": 233627.531482, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.928041910267893, 40.807906961989801 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BY BRIDGE", "POINT_X": 1004831.916790, "POINT_Y": 232973.874579, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.925653962457531, 40.806111338417153 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LA PLAYA", "POINT_X": 1002331.916790, "POINT_Y": 235547.659302, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.934677530535353, 40.813181131907513 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "COMMUTER FERRY", "POINT_X": 1004970.805680, "POINT_Y": 239288.978746, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.932660088904797, 40.823508408354648 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "MALL PARK = IDEA", "POINT_X": 1005335.389020, "POINT_Y": 239736.027357, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.923814075837896, 40.824670361059205 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "150TH LATINO HUB", "POINT_X": 1007297.024430, "POINT_Y": 236773.781028, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.916736454259592, 40.816534933963652 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "7 HIGH SCHOOLS", "POINT_X": 1005307.644880, "POINT_Y": 237783.707553, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.923920447782024, 40.819311863592574 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BRONX BREWERY", "POINT_X": 1009261.806920, "POINT_Y": 231315.190306, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.909658494773566, 40.801547278142465 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "VIEWS", "POINT_X": 1009431.147790, "POINT_Y": 230156.991835, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.909051187140776, 40.798367860306655 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BRONX DISTILLERY", "POINT_X": 1008796.326520, "POINT_Y": 230976.912774, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911341024246383, 40.800620104700016 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BRONX DISTILLERY", "POINT_X": 1009134.868180, "POINT_Y": 230825.871107, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.910118804859522, 40.80020458986089 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LINCOLN", "POINT_X": 1003364.251860, "POINT_Y": 233423.527357, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.930954181873901, 40.807348807853792 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "XING", "POINT_X": 1009407.304330, "POINT_Y": 232998.097928, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.909126659230026, 40.80616598165264 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "REALLY BAD PEDESTRIAN XING RUN", "POINT_X": 1008533.751750, "POINT_Y": 232432.881245, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.912284152542085, 40.804617062453424 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LOTS OF TRUCKS", "POINT_X": 1007692.243130, "POINT_Y": 232311.001963, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.915324207041067, 40.804284810261763 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "MAJOR TRAFFIC, DIFFICULT XING", "POINT_X": 1008879.744690, "POINT_Y": 232550.398794, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911033953918221, 40.804938657909211 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ANTIQUES", "POINT_X": 1006319.748500, "POINT_Y": 232304.749750, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.92028181651969, 40.80427118454557 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "UNDER RAIL, CAN THIS CONNECT?", "POINT_X": 1009093.866050, "POINT_Y": 231629.073197, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.910263927689329, 40.802409274043498 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "BIKE CONNECTOR", "POINT_X": 1007353.474120, "POINT_Y": 233683.692787, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.916543150849492, 40.808053358654568 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "\"WE JUST NEED TRAFFIC TO STOP\"", "POINT_X": 1010313.359930, "POINT_Y": 233401.350832, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.905852237544337, 40.807270172599267 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LIGHTING TRAFFIC CONTROL OVERALL BEAUTIFICATION", "POINT_X": 1011128.085340, "POINT_Y": 232282.442637, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.902913715489348, 40.804196638839834 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "STAIR RAMP", "POINT_X": 1006565.931410, "POINT_Y": 230678.524585, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.919397984247666, 40.799807025498929 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LIGHTS", "POINT_X": 1004972.409530, "POINT_Y": 234409.139028, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.925142044102884, 40.810050412494441 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "MITCHEL HOUSES", "POINT_X": 1005348.626860, "POINT_Y": 233761.852010, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.923785025844083, 40.808272899203494 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "GREEN PARK LIGHT STREET CONNECTOR", "POINT_X": 1005140.293530, "POINT_Y": 232616.018677, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.924541157518149, 40.805128399172844 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "TRUCKS!", "POINT_X": 1006618.513000, "POINT_Y": 231799.658500, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.919204332049446, 40.802884097042643 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LIGHTS", "POINT_X": 1006665.667430, "POINT_Y": 232428.268461, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.919031910367721, 40.804609338470712 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LIGHTS", "POINT_X": 1006184.122790, "POINT_Y": 232686.424441, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.920770463214879, 40.805319113854814 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "TRUCKS", "POINT_X": 1007193.530220, "POINT_Y": 231271.630682, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917129160031735, 40.801433331580803 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LIGHTS", "POINT_X": 1008022.237970, "POINT_Y": 230839.977010, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.914137440756676, 40.800246370131845 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "NEED A COVERED BUS STOP W\/ BENCHES", "POINT_X": 1008454.529640, "POINT_Y": 230688.935343, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.912576599014756, 40.799830628608106 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "TOUGH INTERSECTION", "POINT_X": 1008609.864980, "POINT_Y": 232357.592421, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.912009495685467, 40.804410205922402 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "WALK WAY", "POINT_X": 1007235.779640, "POINT_Y": 231954.560343, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.916974219422272, 40.803307675665991 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ARTWORK PAINTED ON", "POINT_X": 1004590.510230, "POINT_Y": 233720.647928, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.926523708631777, 40.808161583353296 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CITIBIKE?", "POINT_X": 1004454.529640, "POINT_Y": 234691.539510, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.927011990611987, 40.810826722678172 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LIBRARY", "POINT_X": 1005235.779640, "POINT_Y": 234873.831177, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.924189189474035, 40.811325241217027 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LA MORADA RESTAURANT", "POINT_X": 1005782.654640, "POINT_Y": 234326.956177, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.922215367133774, 40.809822905825257 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "MAJOR TRAFFIC", "POINT_X": 1007639.669740, "POINT_Y": 231922.322294, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.915515461461112, 40.803218131166226 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "INDUSTRIAL BUT QUIET", "POINT_X": 1008891.102280, "POINT_Y": 231599.868215, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.910996417333834, 40.802329682205944 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LOTS OF TRUCKS", "POINT_X": 1007193.530220, "POINT_Y": 231271.630682, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917129160031735, 40.801433331580803 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "POTENTIAL BIKE CONNECTOR TO HUNTS POINT", "POINT_X": 1010613.383810, "POINT_Y": 233337.372843, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.904768723911587, 40.80709368063718 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LONG TRAIN LINES ALONG WATER FRONT", "POINT_X": 1010470.154640, "POINT_Y": 233168.102010, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.905286764961701, 40.80662950542488 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "NEEDS TO DRAW KIDS FROM NYCHA", "POINT_X": 1008621.196310, "POINT_Y": 235121.227010, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911958532552049, 40.811995583205913 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "HOUSING TO S+W OVER PARK", "POINT_X": 1008686.300470, "POINT_Y": 234808.727010, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911724480171813, 40.811137678224263 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PARENTS DONT LET KIDS CROSS OVER ROW", "POINT_X": 1008621.196310, "POINT_Y": 234652.477010, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.911960234475671, 40.810708995443612 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "SHOPPING STREET", "POINT_X": 1006110.912750, "POINT_Y": 233722.840250, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.921031534431265, 40.80816396947629 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "KIDS", "POINT_X": 1006869.556750, "POINT_Y": 234430.802750, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.918288690650357, 40.810105219813622 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "KIDS", "POINT_X": 1007220.475670, "POINT_Y": 234169.568117, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917021919277332, 40.80938729809332 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "KIDS", "POINT_X": 1006725.684000, "POINT_Y": 234232.068117, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.918809084368377, 40.809560115790767 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "KIDS", "POINT_X": 1006540.207810, "POINT_Y": 233897.025426, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.919480208672596, 40.808640986718608 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "KIDS", "POINT_X": 1006355.892330, "POINT_Y": 234096.651450, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.920145360943508, 40.809189367736899 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "NICE BLOCK", "POINT_X": 1005855.373770, "POINT_Y": 233286.479999, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.921956025148404, 40.806966910260229 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "ZARO'S RETAIL WINDOW", "POINT_X": 1004788.184000, "POINT_Y": 231216.443117, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.920654989040997, 40.803710077206347 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LOCAL PEDI-CAB CONCESSION?", "POINT_X": 1005482.946370, "POINT_Y": 233782.452432, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.923299756012014, 40.808329119854911 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CANAL ST", "POINT_X": 1003803.517310, "POINT_Y": 234870.921384, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.929363221555988, 40.811320540763106 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "UNDER 138TH ST NOTHING TO ATTRACT PEOPLE", "POINT_X": 1007760.589120, "POINT_Y": 232442.894744, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.915076872577444, 40.804646637904341 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "UNDER 138TH ST TRAFFIC", "POINT_X": 1007760.589120, "POINT_Y": 232442.894744, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.915076872577444, 40.804646637904341 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "UNDER 138TH ST PROJECTS PSYCOLOGICAL BARRIER", "POINT_X": 1007782.975670, "POINT_Y": 232435.193117, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.914996036679682, 40.804625439469696 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "NO SIDEWALK", "POINT_X": 1007084.653750, "POINT_Y": 231662.128000, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917521087900653, 40.802505421320859 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CONNECT TO TRAIN STOPS", "POINT_X": 1008999.189330, "POINT_Y": 233969.984866, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.910597270208555, 40.808834693960527 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "CITIBIKE STAND", "POINT_X": 1008245.932010, "POINT_Y": 235595.547409, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.913312486260168, 40.813298487152238 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "TRAFFIC", "POINT_X": 1007017.395130, "POINT_Y": 236617.837328, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.917747218383823, 40.81610763751069 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "HEAVILY USED BY CITIZENS", "POINT_X": 1003782.975670, "POINT_Y": 232065.401450, "VALUE": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.929445590956675, 40.803620211747578 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "FLOOD 3' DURING SANDY", "POINT_X": 1003668.449000, "POINT_Y": 233221.923750, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.929855923619826, 40.806794798453829 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "WATERFRONT WITH PARTIES IN SUMMER", "POINT_X": 1003428.809000, "POINT_Y": 233320.609784, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.930721278248598, 40.807066187729482 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "DANGEROUS FOR CYCLISTS", "POINT_X": 1003178.809000, "POINT_Y": 233758.109784, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.931623107675648, 40.808267543078351 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PED BAD TIMING LIGHTS", "POINT_X": 1003152.767330, "POINT_Y": 233690.401450, "VALUE": -1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.931717369094102, 40.808081758246381 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "WELL USED BUT NOT GREAT", "POINT_X": 1004439.205670, "POINT_Y": 233624.765084, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.927070556166711, 40.807898758603699 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PROJECT FOCUS S OF 138", "POINT_X": 1007047.836500, "POINT_Y": 232645.019000, "VALUE": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.91765073444553, 40.805203280955247 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "PIO PIO RESTAURANT", "POINT_X": 0.000000, "POINT_Y": 0.000000, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.913649939263919, 40.806785456466123 ] ] } },
+	{ "type": "Feature", "properties": { "NOTES": "LA FINCA DEL SUR", "POINT_X": 0.000000, "POINT_Y": 0.000000, "VALUE": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -73.930231602049176, 40.812309956954934 ] ] } }
+	]
+}
+]
+
+var routes = [{
+	"type": "FeatureCollection",
+	"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+
+	"features": [
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 1, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.924194976760845, 40.811352932302924, 0.0 ], [ -73.923754273029076, 40.811990865280436, 0.0 ], [ -73.921485919890813, 40.811034258788936, 0.0 ], [ -73.918044101820627, 40.809573092452133, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 1, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.921035068078808, 40.811651448239473, 0.0 ], [ -73.919268265530391, 40.810908878834482, 0.0 ], [ -73.917603995212033, 40.810347150038609, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 1, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.921937910922324, 40.810412013168076, 0.0 ], [ -73.918434285578982, 40.80891923594028, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 1, "NOTES": "SPEED TRAFFIC" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.928355659860273, 40.80403182466496, 0.0 ], [ -73.925708697389553, 40.805206773491662, 0.0 ], [ -73.924262882166772, 40.807169243447909, 0.0 ], [ -73.926523708631777, 40.808161583353296, 0.0 ], [ -73.925142044102884, 40.810050412494441, 0.0 ], [ -73.924194976760845, 40.811352932302924, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 1, "NOTES": "WALKING" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917082345080033, 40.797287429892705, 0.0 ], [ -73.913160302337019, 40.799895889329349, 0.0 ], [ -73.913746289346676, 40.799865220561841, 0.0 ], [ -73.916206472687904, 40.798189701019737, 0.0 ], [ -73.919992005096105, 40.79969817929684, 0.0 ], [ -73.920511983533174, 40.800100003171686, 0.0 ], [ -73.920973281618416, 40.801077176595435, 0.0 ], [ -73.921286246406154, 40.801559862352676, 0.0 ], [ -73.921818826555665, 40.801929524030776, 0.0 ], [ -73.922429853417754, 40.802251584525855, 0.0 ], [ -73.922970045870173, 40.802544804997346, 0.0 ], [ -73.925070222320102, 40.803040573618333, 0.0 ], [ -73.92847077283551, 40.804353149983775, 0.0 ], [ -73.928944722695718, 40.80463041737999, 0.0 ], [ -73.929163971436353, 40.804853918664911, 0.0 ], [ -73.929300935821459, 40.805056521564829, 0.0 ], [ -73.930293293997266, 40.806343318781266, 0.0 ], [ -73.930340091133957, 40.806569691576108, 0.0 ], [ -73.930198701251754, 40.806843602027477, 0.0 ], [ -73.929545033346173, 40.807704123555958, 0.0 ], [ -73.9269918428664, 40.811128373630453, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 1, "NOTES": "NYCHA PLAN - CREATE SAFE ZONE THROUGH NYCHA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.913235936421216, 40.799945973223295, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 1, "NOTES": "NYCHA PLAN - CREATE SAFE ZONE THROUGH NYCHA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.921005878577589, 40.801963609484659, 0.0 ], [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.917010498296804, 40.807492743814144, 0.0 ], [ -73.91516297955107, 40.810436259487474, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 1, "NOTES": "NYCHA PLAN - CREATE SAFE ZONE THROUGH NYCHA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.925142044102884, 40.810050412494441, 0.0 ], [ -73.922737973535547, 40.813356661403454, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 1, "NOTES": "NYCHA PLAN - CREATE SAFE ZONE THROUGH NYCHA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.922886293860557, 40.809105883948376, 0.0 ], [ -73.924451755533084, 40.806903518581052, 0.0 ], [ -73.916108196050999, 40.803378005516656, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 1, "NOTES": "NYCHA PLAN - CREATE SAFE ZONE THROUGH NYCHA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.911367317162671, 40.804227513704006, 0.0 ], [ -73.9141837072291, 40.800346689339094, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 1, "NOTES": "NYCHA PLAN - CREATE SAFE ZONE THROUGH NYCHA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.919224682880596, 40.807558405535879, 0.0 ], [ -73.919722474709772, 40.806844340667055, 0.0 ], [ -73.915002934657807, 40.804871859183848, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 3, "NOTES": "LIGHTING  - MURALS - PLANTINGS" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.928556009133686, 40.809046266616754, 0.0 ], [ -73.926627647010363, 40.80787975801001, 0.0 ], [ -73.924451755533084, 40.806903518581052, 0.0 ], [ -73.915948632490569, 40.803355997252474, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 4, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.909770091134504, 40.808612752721302, 0.0 ], [ -73.909431843525212, 40.809464257448198, 0.0 ], [ -73.907487935555523, 40.814918804160591, 0.0 ], [ -73.903851290676982, 40.814140301888386, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 4, "NOTES": "BIKE ROUTE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.909770091134504, 40.808612752721302, 0.0 ], [ -73.910776082334223, 40.806700328921572, 0.0 ], [ -73.909126659230026, 40.80616598165264, 0.0 ], [ -73.908795519606826, 40.80586130415552, 0.0 ], [ -73.906638427035602, 40.804609916906358, 0.0 ], [ -73.912060481034629, 40.799257744072797, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 4, "NOTES": "BIKE ROUTE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.906638427035602, 40.804609916906358, 0.0 ], [ -73.905489045564494, 40.803931435495087, 0.0 ], [ -73.910883061448772, 40.798575268196259, 0.0 ], [ -73.912060481034629, 40.799257744072797, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 2, "NOTES": "140TH ST" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.912787666212978, 40.804839783721555, 0.0 ], [ -73.911367317162671, 40.804227513704006, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 2, "NOTES": "140TH ST" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.929545033346173, 40.807704123555958, 0.0 ], [ -73.921571346791779, 40.804345195652559, 0.0 ], [ -73.913706653973236, 40.80100029014671, 0.0 ], [ -73.912730115249005, 40.800587838721995, 0.0 ], [ -73.912406800034759, 40.800396987377404, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 2, "NOTES": "140TH ST" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.929545033346173, 40.807704123555958, 0.0 ], [ -73.9269918428664, 40.811128373630453, 0.0 ], [ -73.926339937793244, 40.811522870275638, 0.0 ], [ -73.924683251789133, 40.812384165483792, 0.0 ], [ -73.918044101820627, 40.809573092452133, 0.0 ], [ -73.919257080695147, 40.807540377540974, 0.0 ], [ -73.921571346791779, 40.804345195652559, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 4, "NOTES": "BIKE LANE - IMPROVE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.912060481034629, 40.799257744072797, 0.0 ], [ -73.913235936421216, 40.799945973223295, 0.0 ], [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.917010498296804, 40.807492743814144, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 4, "NOTES": "MAKE ALTERNATIVE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.927491447672537, 40.806839409262082, 0.0 ], [ -73.926523708631777, 40.808161583353296, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 5, "NOTES": "CITIBIKE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.918260026075416, 40.81537511800127, 0.0 ], [ -73.919200380355448, 40.814143928637058, 0.0 ], [ -73.917543523049346, 40.813449716445838, 0.0 ], [ -73.914097042468157, 40.812299991824503, 0.0 ], [ -73.91516297955107, 40.810436259487474, 0.0 ], [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.919795224967501, 40.803588310031479, 0.0 ], [ -73.913706653973236, 40.80100029014671, 0.0 ], [ -73.912730115249005, 40.800587838721995, 0.0 ], [ -73.912406800034759, 40.800396987377404, 0.0 ], [ -73.917082345080033, 40.797287429892705, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 6, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.9141837072291, 40.800346689339094, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 7, "NOTES": "HIGHWAY" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.931723138754634, 40.807903561115324, 0.0 ], [ -73.930827108373535, 40.808288342077034, 0.0 ], [ -73.929545033346173, 40.807704123555958, 0.0 ], [ -73.927491447672537, 40.806839409262082, 0.0 ], [ -73.921571346791779, 40.804345195652559, 0.0 ], [ -73.916738934953798, 40.802212842934061, 0.0 ], [ -73.915914108701656, 40.803461681663627, 0.0 ], [ -73.914076859810251, 40.803747800948599, 0.0 ], [ -73.909126659230026, 40.80616598165264, 0.0 ], [ -73.906214884536482, 40.807434103194325, 0.0 ], [ -73.903000049285907, 40.809475819705384, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 3, "NOTES": "33 BUS NEED REST STOP" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.9141837072291, 40.800346689339094, 0.0 ], [ -73.913706653973236, 40.80100029014671, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 7, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917082345080033, 40.797287429892705, 0.0 ], [ -73.913160302337019, 40.799895889329349, 0.0 ], [ -73.913235936421216, 40.799945973223295, 0.0 ], [ -73.9141837072291, 40.800346689339094, 0.0 ], [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.927985196577296, 40.806163974412115, 0.0 ], [ -73.927491447672537, 40.806839409262082, 0.0 ], [ -73.926523708631777, 40.808161583353296, 0.0 ], [ -73.925142044102884, 40.810050412494441, 0.0 ], [ -73.922886293860557, 40.809105883948376, 0.0 ], [ -73.919257080695147, 40.807540377540974, 0.0 ], [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.919795224967501, 40.803588310031479, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 7, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.917010498296804, 40.807492743814144, 0.0 ], [ -73.91516297955107, 40.810436259487474, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917082345080033, 40.797287429892705, 0.0 ], [ -73.913160302337019, 40.799895889329349, 0.0 ], [ -73.914178738199098, 40.800335190700892, 0.0 ], [ -73.925708697389553, 40.805206773491662, 0.0 ], [ -73.925247993062996, 40.805894099498289, 0.0 ], [ -73.924451755533084, 40.806903518581052, 0.0 ], [ -73.922886293860557, 40.809105883948376, 0.0 ], [ -73.925142044102884, 40.810050412494441, 0.0 ], [ -73.927985196577296, 40.806163974412115, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.925708697389553, 40.805206773491662, 0.0 ], [ -73.927985196577296, 40.806163974412115, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.925247993062996, 40.805894099498289, 0.0 ], [ -73.927491447672537, 40.806839409262082, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.924733263420464, 40.80654664500792, 0.0 ], [ -73.927007240691751, 40.807500847442746, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.924733263420464, 40.80654664500792, 0.0 ], [ -73.915471018647651, 40.802614476956052, 0.0 ], [ -73.913223422472143, 40.801664618372619, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.924262882166772, 40.807169243447909, 0.0 ], [ -73.920622088570482, 40.805655828005072, 0.0 ], [ -73.918849172596779, 40.804914818558963, 0.0 ], [ -73.915867678967686, 40.803713688509582, 0.0 ], [ -73.914495221975372, 40.80556139782496, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.913477969203953, 40.804263214203928, 0.0 ], [ -73.915002934657807, 40.804871859183848, 0.0 ], [ -73.917985091858839, 40.806118256155152, 0.0 ], [ -73.919722474709772, 40.806844340667055, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.915452288872913, 40.80427293186294, 0.0 ], [ -73.914493468025412, 40.803855666630582, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 8, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.919722474709772, 40.806844340667055, 0.0 ], [ -73.920531102788587, 40.807231091307045, 0.0 ], [ -73.923365295257213, 40.808432019990981, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 9, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917082345080033, 40.797287429892705, 0.0 ], [ -73.913160302337019, 40.799895889329349, 0.0 ], [ -73.9141837072291, 40.800346689339094, 0.0 ], [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.92207997367926, 40.803680851783767, 0.0 ], [ -73.921571346791779, 40.804345195652559, 0.0 ], [ -73.925247993062996, 40.805894099498289, 0.0 ], [ -73.922886293860557, 40.809105883948376, 0.0 ], [ -73.921937910922324, 40.810412013168076, 0.0 ], [ -73.92345178368798, 40.811034879627996, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 9, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.925247993062996, 40.805894099498289, 0.0 ], [ -73.921571346791779, 40.804345195652559, 0.0 ], [ -73.919795224967501, 40.803588310031479, 0.0 ], [ -73.912730115249005, 40.800587838721995, 0.0 ], [ -73.912406800034759, 40.800396987377404, 0.0 ], [ -73.913160302337019, 40.799895889329349, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 10, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.917082345080033, 40.797287429892705, 0.0 ], [ -73.913160302337019, 40.799895889329349, 0.0 ], [ -73.9141837072291, 40.800346689339094, 0.0 ], [ -73.927985196577296, 40.806163974412115, 0.0 ], [ -73.922737973535547, 40.813356661403454, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 10, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.92207997367926, 40.803680851783767, 0.0 ], [ -73.921571346791779, 40.804345195652559, 0.0 ], [ -73.919257080695147, 40.807540377540974, 0.0 ], [ -73.918044101820627, 40.809573092452133, 0.0 ], [ -73.917224609983563, 40.811014395250311, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 10, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.920271598351533, 40.802920339428773, 0.0 ], [ -73.918849172596779, 40.804914818558963, 0.0 ], [ -73.917485488652275, 40.806826802539717, 0.0 ], [ -73.915145563747046, 40.810466710985047, 0.0 ], [ -73.914097042468157, 40.812299991824503, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 0, "PDF_PG": 11, "NOTES": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.903000049285907, 40.809475819705384, 0.0 ], [ -73.906214884536482, 40.807434103194325, 0.0 ], [ -73.909126659230026, 40.80616598165264, 0.0 ], [ -73.912284152542085, 40.804617062453424, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 12, "NOTES": "CONNECTION 132" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.92207997367926, 40.803680851783767, 0.0 ], [ -73.927985196577296, 40.806163974412115, 0.0 ] ] ] } },
+	{ "type": "Feature", "properties": { "VALUE": 1, "PDF_PG": 0, "NOTES": "\"LOWLINE\" ABANDONED RAIL CORRIDOR" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.912876499603357, 40.816037117509445, 0.0 ], [ -73.912902965965998, 40.815942787712792, 0.0 ], [ -73.912914298782198, 40.815909916799598, 0.0 ], [ -73.912923835997304, 40.815811285581383, 0.0 ], [ -73.912933491008388, 40.815622593279706, 0.0 ], [ -73.912924316696717, 40.815443893549791, 0.0 ], [ -73.912874801608496, 40.81517819950286, 0.0 ], [ -73.912854537611196, 40.81508645521096, 0.0 ], [ -73.912768631411154, 40.814831455160665, 0.0 ], [ -73.912632734586865, 40.814435845470669, 0.0 ], [ -73.912598379587479, 40.814328603731212, 0.0 ], [ -73.91256873648193, 40.814215409124749, 0.0 ], [ -73.912426811599786, 40.813636336580956, 0.0 ], [ -73.912180272962189, 40.812726006698092, 0.0 ], [ -73.911711373238688, 40.811605839729062, 0.0 ], [ -73.910838546143893, 40.810056495860088, 0.0 ], [ -73.910425495933481, 40.809408115822137, 0.0 ], [ -73.910300324613132, 40.809216221360813, 0.0 ], [ -73.909924608619804, 40.808793021662723, 0.0 ], [ -73.908170645674176, 40.807314442224225, 0.0 ], [ -73.907152707226615, 40.80649163880328, 0.0 ], [ -73.905813819568564, 40.805370742649551, 0.0 ], [ -73.904781395667541, 40.803755699861163, 0.0 ] ] ] } }
+	]
+}
+]
+
+var routesStyle = {
+	color: "#FF0000",
+	opacity: 1,
+	weight: 5,
+}
+
 var nychaStyle = {
-	"color": "#FF0000",
-	"fillColor": "#000000",
-	"fillOpacity": 0.1,
-	"strokeOpacity": 1,
-	"weight": 2.5
+	color: "#D9D3C4",
+	fillColor: "#D9D3C4",
+	fillOpacity: .5,
+	opacity: 0,
+	weight: 2
 };
 
 var connectorStyle = {
-	"color": "#FF0000",
-	"strokeOpacity": 1,
-	"weight": 10
+	color: "#FF7F00",
+	opacity: 1,
+	weight: 10,
+	dashArray: "1,15",
+	lineCap: "square"
 };
 
 var schoolsStyle = {
-	"color": "#FF0000",
-	"fillColor": "#000000",
-	"fillOpacity": 0.1,
-	"strokeOpacity": 1,
-	"weight": 2.5
+	color: "#FF0000",
+	fillColor: "#A3BAD2",
+	fillOpacity: 0.75,
+	opacity: 1,
+	weight: 0
 };
 
 var devProjectsStyle = {
-	"color": "#FF0000",
-	"fillColor": "#000000",
-	"fillOpacity": 0.1,
-	"strokeOpacity": 1,
-	"weight": 2.5
+	color: "#FF0000",
+	fillColor: "#000000",
+	fillOpacity: 0.1,
+	opacity: 1,
+	weight: 2.5
 };
 
+L.geoJson(routes, {
+	style: function(feature){
+		switch (feature.properties.VALUE){
+			case 1: return {
+				color: "#00DBFF",
+				opacity: 1,
+				weight: 3
+			};
+			case 0: return {
+				color: "#FF0000",
+				opacity: 1,
+				weight: 3
+			};
+		}
+	},
+	onEachFeature: function (feature, layer){
+		if(feature.properties.NOTES != null){
+			layer.bindPopup(feature.properties.NOTES)
+		}
+		else{}
+	}
+}).addTo(map);
+
+L.geoJson(comments, {
+	style: function(feature){
+		switch (feature.properties.VALUE){
+			case 1: return {
+				fillColor: "#00DBFF",
+				color: "#00DBFF",
+				opacity: 1,
+				fillOpacity: 0.5,
+				radius: 10,
+				weight: 1
+			};
+			case -1: return {
+				fillColor: "#FF0000",
+				color: "#FF0000",
+				opacity: 1,
+				fillOpacity: 0.5,
+				radius: 10,
+				weight: 1
+			};
+			default: return {
+				fillColor: "#999999",
+				color: "#999999",
+				radius: 6,
+				opacity: 1,
+				weight: 1,
+				fillOpacity: 1
+			};
+		}
+	},
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+        });
+    }
+}).addTo(map);
+
+L.geoJson(comments, {
+	style: function(feature){
+		switch (feature.properties.VALUE){
+			case 1: return {
+				fillColor: "#00DBFF",
+				color: "#00DBFF",
+				opacity: 1,
+				fillOpacity: 0.35,
+				radius: 6,
+				weight: 1
+			};
+			case -1: return {
+				fillColor: "#FF0000",
+				color: "#FF0000",
+				opacity: 1,
+				fillOpacity: 0.35,
+				radius: 6,
+				weight: 1
+			};
+			default: return {
+				fillColor: "#999999",
+				color: "#999999",
+				radius: 6,
+				opacity: 1,
+				weight: 1,
+				fillOpacity: 1
+			};
+		}
+	},
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+        });
+    },
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.NOTES);
+    }
+}).addTo(map);
+
 L.geoJson(connector, {
-	style: connectorStyle
+	style: connectorStyle,
+	onEachFeature: function(feature, layer){
+		layer.bindPopup("Randall's Island Connector")
+	}
 }).addTo(map);
 
 L.geoJson(schools, {

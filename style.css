@@ -1,4 +1,10 @@
 #map {
-	height: 720px;
-	width: 1280px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 99%;
+	/*height: 720px;
+	width: 1280px;*/
 }
