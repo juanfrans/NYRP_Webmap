@@ -335,6 +335,14 @@ var devProjectsStyle = {
 	weight: 2.5
 };
 
+L.geoJson(schools, {
+	style: schoolsStyle
+}).addTo(map);
+
+L.geoJson(nycha, {
+	style: nychaStyle
+}).addTo(map);
+
 L.geoJson(routes, {
 	style: function(feature){
 		switch (feature.properties.VALUE){
@@ -434,21 +442,35 @@ L.geoJson(comments, {
 L.geoJson(connector, {
 	style: connectorStyle,
 	onEachFeature: function(feature, layer){
-		layer.bindPopup("Randall's Island Connector")
+		layer.bindPopup("Randall's Island Connector<br />"+"<img src=https://3.bp.blogspot.com/-v6qV1M6fDKM/T9jF3XRShwI/AAAAAAAAFUY/EMSsCryeDP0/s400/familypicnic.jpg/>")
 	}
 }).addTo(map);
 
-L.geoJson(schools, {
-	style: schoolsStyle
-}).addTo(map);
 
-L.geoJson(nycha, {
-	style: nychaStyle
-}).addTo(map);
 
-L.geoJson(devProjects, {
-	style: devProjectsStyle,
-	onEachFeature: function (feature, layer){
-		layer.bindPopup("<b>"+feature.properties.Developer+"</b>"+ "<br />" + feature.properties.Name + "<br />" + feature.properties.Size + "<br />" + feature.properties.Date);
-	}
-}).addTo(map);
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML += '<h2>COMMUNITY MEETING OUTCOME MAP</h2><br>';
+    div.innerHTML += 'BASED ON INPUT BY COMMUNITY MEMBERS<br>';
+	div.innerHTML += '<i class="circle" style="background:#00DBFF"></i>'+'NEIGHBORHOOD ASSESTS<br>';
+	div.innerHTML += '<i class="circle" style="background:#FF0000"></i>'+'NEGATIVE OR PROBLEMATIC LOCATIONS<br>';
+	div.innerHTML += '<i class="circle2" style="background:#999999"></i>'+'OTHER COMMENTS<br>';
+	div.innerHTML += '<i class="line" style="background:#00DBFF"></i>'+'POSITIVE ROUTES TO/FROM RANDALLS ISLAND<br>';
+	div.innerHTML += '<i class="line" style="background:#FF0000"></i>'+'BARRIERS OR DANGEROUS ROUTES<br>';
+
+
+    return div;
+};
+
+legend.addTo(map);

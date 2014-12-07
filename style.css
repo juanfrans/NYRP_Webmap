@@ -1,10 +1,68 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+h2{
+	margin-top: 0px;
+	margin-bottom: -18px;
+	font-family: "proxima-nova", Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+}
+
 #map {
 	margin: 0;
 	padding: 0;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: 99%;
-	/*height: 720px;
-	width: 1280px;*/
+	width: 100%;
+}
+
+.legend {
+    color: #555;
+}
+
+.legend i {
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-right: 5px;
+    opacity: 0.75;
+}
+
+.legend .line{
+	width: 20px;
+	height: 3px;
+	margin-top: 8px;
+}
+
+.legend .circle{
+	border-radius: 50%; /* rounded edges to a div */
+	width: 15px;
+	height: 15px;
+	margin-top: 2px;
+	margin-right: 9px;
+}
+
+.legend .circle2{
+	border-radius: 50%; /* rounded edges to a div */
+	width: 10px;
+	height: 10px;
+	margin-top: 5px;
+	margin-left: 3px;
+	margin-right: 11px;
+}
+
+.info {
+	width: 345px;
+	height: 135px;
+    padding: 5px 5px;
+    font-size: 12px;
+    font-family: "proxima-nova", Helvetica, sans-serif;
+    font-weight: 400;
+    background: white;
+    margin-bottom: 5px;
+    background: rgba(255,255,255,0.8);
 }
