@@ -11,6 +11,14 @@ h2{
 	font-weight: 600;
 }
 
+p{
+	font-family: "proxima-nova", Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	margin-top: 5px;
+	line-height: 100%;
+}
+
 #map {
 	margin: 0;
 	padding: 0;
@@ -56,13 +64,15 @@ h2{
 }
 
 .info {
-	width: 345px;
-	height: 135px;
+	width: 325px;
+	height: 155px;
     padding: 5px 5px;
     font-size: 12px;
     font-family: "proxima-nova", Helvetica, sans-serif;
     font-weight: 400;
     background: white;
     margin-bottom: 5px;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,1);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+    border-radius: 0px;
 }
